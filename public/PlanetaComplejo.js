@@ -1,8 +1,9 @@
 class PlanetaComplejo {
-    constructor(planeta, nombre, radio) {
+    constructor(planeta, nombre, radio, Mu) {
         this.planeta = planeta
         this.nombre = nombre
         this.radio = radio
+        this.Mu = 1 // Masa * G
     }
 
     dibujar(pantalla) {
