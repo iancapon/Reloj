@@ -1,7 +1,8 @@
 const sol = new PlanetaComplejo(
     planeta = { x: 0, y: 0, calcularPosicionActual: () => null },
     nombre = "sol",
-    radio = 696000
+    radio = 696000,
+    mu = 132712440018 // km^3/s^2
 )
 
 const mercurio = new PlanetaComplejo(
@@ -14,7 +15,8 @@ const mercurio = new PlanetaComplejo(
         Omega = [48.33076593, -0.12534081]
     ),
     nombre = "mercurio",
-    radio = 2440
+    radio = 2440,
+    mu = 22032 // km^3/s^2
 )
 
 const venus = new PlanetaComplejo(
@@ -27,12 +29,12 @@ const venus = new PlanetaComplejo(
         Omega = [76.67984255, -0.27769418]
     ),
     nombre = "venus",
-    radio = 6052
+    radio = 6052,
+    mu = 324859 // km^3/s^2
 )
 
 const tierra = new PlanetaComplejo(
-    planeta =
-    new Planeta(
+    planeta = new Planeta(
         a = [1.00000011, -0.00000005],
         e = [0.01671022, -0.00003804],
         i = [0.00005, -0.01337178],
@@ -41,12 +43,12 @@ const tierra = new PlanetaComplejo(
         Omega = [0.0, 0.0]
     ),
     nombre = "tierra",
-    radio = 6371
+    radio = 6371,
+    mu = 398600 // km^3/s^2
 )
 
 const marte = new PlanetaComplejo(
-    planeta =
-    new Planeta(
+    planeta = new Planeta(
         a = [1.52366231, -0.00007221],
         e = [0.09341233, 0.00011902],
         i = [1.85061, -0.00813131],
@@ -55,7 +57,8 @@ const marte = new PlanetaComplejo(
         Omega = [49.57854, -0.29257343]
     ),
     nombre = "marte",
-    radio = 3389.5
+    radio = 3389.5,
+    mu = 42828 // km^3/s^2
 )
 
 const jupiter = new PlanetaComplejo(
@@ -68,7 +71,8 @@ const jupiter = new PlanetaComplejo(
         Omega = [100.47390909, 0.20469106]
     ),
     nombre = "jupiter",
-    radio = 71492
+    radio = 71492,
+    mu = 126686534 // km^3/s^2
 )
 
 const saturno = new PlanetaComplejo(
@@ -81,7 +85,8 @@ const saturno = new PlanetaComplejo(
         Omega = [113.66242448, -0.28867794]
     ),
     nombre = "saturno",
-    radio = 58232
+    radio = 58232,
+    mu = 37931187 // km^3/s^2
 )
 
 const urano = new PlanetaComplejo(
@@ -94,7 +99,8 @@ const urano = new PlanetaComplejo(
         Omega = [74.01692503, 0.04240589]
     ),
     nombre = "urano",
-    radio = 25362
+    radio = 25362,
+    mu = 5793939 // km^3/s^2
 )
 
 const neptuno = new PlanetaComplejo(
@@ -107,5 +113,6 @@ const neptuno = new PlanetaComplejo(
         Omega = [131.78422574, -0.00508664]
     ),
     nombre = "neptuno",
-    radio = 24622
+    radio = 24622,
+    mu = 6836529 // km^3/s^2
 )
