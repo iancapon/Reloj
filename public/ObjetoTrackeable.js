@@ -1,16 +1,24 @@
-class PlanetaComplejo {
-    constructor(planeta, nombre, radio, Mu) {
-        this.planeta = planeta
+class ObjetoTrackeable {
+    constructor(objeto, nombre, radio, Mu) {
+        this.objeto = objeto
         this.nombre = nombre
+        ////// deberia ser tamaño y masa pero bueno
         this.radio = radio
         this.Mu = Mu // km^3/s^2 --> pasar a AU^3/s^2 o algo asi
 
         this.orbitaTrazada = []
     }
 
+    get x() {
+        return this.objeto.x
+    }
+    get y() {
+        return this.objeto.y
+    }
+
     dibujar(pantalla) {
-        pantalla.circunferencia(this.planeta.x, this.planeta.y, this.radio * 2 / 149597870.7)
-        pantalla.texto(this.planeta.x, this.planeta.y, this.nombre)
+        pantalla.circunferencia(this.x, this.y, this.radio * 2 / 149597870.7)
+        pantalla.texto(this.x, this.y, this.nombre)
 
         if (this.orbitaTrazada.length > 1) {
             for (let i = 1; i < this.orbitaTrazada.length; i++) {
@@ -21,9 +29,14 @@ class PlanetaComplejo {
             }
         }
     }
+    
+    calcularPosicionActual(fecha) { // para planetas que usan la fecha actual
+        this.objeto.calcularPosicionActual(fecha)
+        this.trazarOrbita(2000)
+    }
 
-    calcularPosicionActual(fecha) {
-        this.planeta.calcularPosicionActual(fecha)
+    calcularAvance(msAvanzados) { // para la nave que calcula con la fisica en intervalos en ms
+        this.objeto.calcularPosicionActual(msAvanzados)
         this.trazarOrbita(2000)
     }
 
@@ -34,7 +47,7 @@ class PlanetaComplejo {
     trazarOrbita(maxArrayLength) {
         // Si el arreglo está vacío, siempre guardamos el primer punto
         if (this.orbitaTrazada.length === 0) {
-            this.orbitaTrazada.push({ x: this.planeta.x, y: this.planeta.y });
+            this.orbitaTrazada.push({ x: this.x, y: this.y });
             return;
         }
 
@@ -42,8 +55,8 @@ class PlanetaComplejo {
         const ultimoPunto = this.orbitaTrazada[this.orbitaTrazada.length - 1];
 
         // Calcular la distancia (en AU) desde el último punto
-        const dx = this.planeta.x - ultimoPunto.x;
-        const dy = this.planeta.y - ultimoPunto.y;
+        const dx = this.x - ultimoPunto.x;
+        const dy = this.y - ultimoPunto.y;
         const distancia = Math.sqrt(dx * dx + dy * dy);
 
         // Umbral: Solo guardamos un punto si se movió al menos 0.05 AU
@@ -51,7 +64,7 @@ class PlanetaComplejo {
         const umbralDistancia = 0.01;
 
         if (distancia > umbralDistancia) {
-            this.orbitaTrazada.push({ x: this.planeta.x, y: this.planeta.y });
+            this.orbitaTrazada.push({ x: this.x, y: this.y });
 
             if (this.orbitaTrazada.length > maxArrayLength) {
                 this.orbitaTrazada.shift();

@@ -1,11 +1,11 @@
-const sol = new PlanetaComplejo(
+const sol = new ObjetoTrackeable(
     planeta = { x: 0, y: 0, calcularPosicionActual: () => null },
     nombre = "sol",
     radio = 696000,
     mu = 132712440018 // km^3/s^2
 )
 
-const mercurio = new PlanetaComplejo(
+const mercurio = new ObjetoTrackeable(
     planeta = new Planeta(
         a = [0.38709927, 0.00000037],
         e = [0.20563593, 0.00001906],
@@ -19,7 +19,7 @@ const mercurio = new PlanetaComplejo(
     mu = 22032 // km^3/s^2
 )
 
-const venus = new PlanetaComplejo(
+const venus = new ObjetoTrackeable(
     planeta = new Planeta(
         a = [0.72333566, 0.00000390],
         e = [0.00677672, -0.00004107],
@@ -33,7 +33,7 @@ const venus = new PlanetaComplejo(
     mu = 324859 // km^3/s^2
 )
 
-const tierra = new PlanetaComplejo(
+const tierra = new ObjetoTrackeable(
     planeta = new Planeta(
         a = [1.00000011, -0.00000005],
         e = [0.01671022, -0.00003804],
@@ -47,7 +47,7 @@ const tierra = new PlanetaComplejo(
     mu = 398600 // km^3/s^2
 )
 
-const marte = new PlanetaComplejo(
+const marte = new ObjetoTrackeable(
     planeta = new Planeta(
         a = [1.52366231, -0.00007221],
         e = [0.09341233, 0.00011902],
@@ -61,7 +61,7 @@ const marte = new PlanetaComplejo(
     mu = 42828 // km^3/s^2
 )
 
-const jupiter = new PlanetaComplejo(
+const jupiter = new ObjetoTrackeable(
     planeta = new Planeta(
         a = [5.20288700, -0.00011607],
         e = [0.04838624, -0.00012050],
@@ -75,7 +75,7 @@ const jupiter = new PlanetaComplejo(
     mu = 126686534 // km^3/s^2
 )
 
-const saturno = new PlanetaComplejo(
+const saturno = new ObjetoTrackeable(
     planeta = new Planeta(
         a = [9.53667594, -0.00125060],
         e = [0.05386179, -0.00050991],
@@ -89,7 +89,7 @@ const saturno = new PlanetaComplejo(
     mu = 37931187 // km^3/s^2
 )
 
-const urano = new PlanetaComplejo(
+const urano = new ObjetoTrackeable(
     planeta = new Planeta(
         a = [19.18916464, -0.00196176],
         e = [0.04725744, -0.00004397],
@@ -103,7 +103,7 @@ const urano = new PlanetaComplejo(
     mu = 5793939 // km^3/s^2
 )
 
-const neptuno = new PlanetaComplejo(
+const neptuno = new ObjetoTrackeable(
     planeta = new Planeta(
         a = [30.06992276, 0.00026291],
         e = [0.00859048, 0.00005105],
