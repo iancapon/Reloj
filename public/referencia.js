@@ -116,3 +116,17 @@ const neptuno = new ObjetoTrackeable(
     radio = 24622,
     mu = 6836529 // km^3/s^2
 )
+
+const pluton = new ObjetoTrackeable(
+    planeta = new Planeta(
+        a = [39.48168677, -0.00076912],
+        e = [0.24880766, 0.00006465],
+        i = [17.14175, 0.003075],
+        L = [238.92881, 145.20775],
+        w_bar = [224.06676, -0.036736],
+        Omega = [110.30347, -0.010369]
+    ),
+    nombre = "pluton",
+    radio = 1188,
+    mu = 871 // km^3/s^2
+)
