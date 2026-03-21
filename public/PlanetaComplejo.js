@@ -48,7 +48,7 @@ class PlanetaComplejo {
 
         // Umbral: Solo guardamos un punto si se movió al menos 0.05 AU
         // (Puedes ajustar este valor. Un número más grande = órbita más poligonal pero más rendimiento)
-        const umbralDistancia = 0.1;
+        const umbralDistancia = 0.01;
 
         if (distancia > umbralDistancia) {
             this.orbitaTrazada.push({ x: this.planeta.x, y: this.planeta.y });

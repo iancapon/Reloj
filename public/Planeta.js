@@ -14,11 +14,6 @@ class Planeta {
         this.y = 0
     }
 
-    dibujar(pantalla) {
-        pantalla.circunferencia(this.x, this.y, this.radio)
-        pantalla.texto(this.x, this.y, this.nombre)
-    }
-
     calcularPosicionActual(fecha) {
         const d = (fecha - J2000) / 86400000 // de milisegundos a dias
         const T = d / 36525 // en siglos julianos
