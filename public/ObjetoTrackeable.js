@@ -30,13 +30,8 @@ class ObjetoTrackeable {
         }
     }
     
-    calcularPosicionActual(fecha) { // para planetas que usan la fecha actual
-        this.objeto.calcularPosicionActual(fecha)
-        this.trazarOrbita(2000)
-    }
-
-    calcularAvance(msAvanzados) { // para la nave que calcula con la fisica en intervalos en ms
-        this.objeto.calcularPosicionActual(msAvanzados)
+    calcularPosicionActual(fechaActual) { // para planetas que usan la fecha actual
+        this.objeto.calcularPosicionActual(fechaActual)
         this.trazarOrbita(2000)
     }
 

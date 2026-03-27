@@ -14,8 +14,8 @@ class Planeta {
         this.y = 0
     }
 
-    calcularPosicionActual(fecha) {
-        const d = (fecha - J2000) / 86400000 // de milisegundos a dias
+    calcularPosicionActual(fechaActual) {
+        const d = (fechaActual - J2000) / 86400000 // de milisegundos a dias
         const T = d / 36525 // en siglos julianos
 
         // utilizo el tiempo en siglos julianos y la taza de cambio
